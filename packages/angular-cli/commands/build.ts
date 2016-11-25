@@ -15,6 +15,7 @@ export interface BuildOptions {
   vendorChunk?: boolean;
   verbose?: boolean;
   progress?: boolean;
+  publicPath?: string;
 }
 
 const BuildCommand = Command.extend({
@@ -39,7 +40,8 @@ const BuildCommand = Command.extend({
     { name: 'sourcemap',      type: Boolean, default: true, aliases: ['sm'] },
     { name: 'vendor-chunk',   type: Boolean, default: true },
     { name: 'verbose',        type: Boolean, default: false },
-    { name: 'progress',       type: Boolean, default: true }
+    { name: 'progress',       type: Boolean, default: true },
+    { name: 'public-path',    type: String,  default: null, aliases: ['p'] }
   ],
 
   run: function (commandOptions: BuildOptions) {
