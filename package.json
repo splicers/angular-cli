@@ -70,6 +70,7 @@
     "get-caller-file": "^1.0.0",
     "git-repo-info": "^1.0.4",
     "glob": "^7.0.3",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.19.0",
     "inflection": "^1.7.0",
     "inquirer": "^0.12.0",
