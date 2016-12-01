@@ -128,9 +128,9 @@ export function getWebpackCommonConfig(
       rules: [
         { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader', exclude: [nodeModules] },
 
-        { test: /\.json$/, loader: 'json-loader' },
-        { test: /\.(jpg|png|gif)$/, loader: 'url-loader?limit=10000' },
-        { test: /\.html$/, loader: 'raw-loader' },
+        { test: /\.json$/, loader: 'json-loader' },
+        { test: /\.(jpg|png|gif)$/, loader: 'url-loader?limit=10000' },
+        { test: /\.html$/, loader: 'html?-minimize&interpolate&attrs=img:src video:poster source:src' },
 
         { test: /\.(otf|ttf|woff|woff2)$/, loader: 'url-loader?limit=10000' },
         { test: /\.(eot|svg)$/, loader: 'file-loader' }
