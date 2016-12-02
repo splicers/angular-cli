@@ -55,11 +55,11 @@ export const getWebpackProdConfigPartial = function(projectRoot: string, appConf
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
-      new webpack.optimize.UglifyJsPlugin(<any>{
-        mangle: { screw_ie8 : true },
-        compress: { screw_ie8: true },
-        sourceMap: true
-      }),
+      // new webpack.optimize.UglifyJsPlugin(<any>{
+      //   mangle: { screw_ie8 : true },
+      //   compress: { screw_ie8: true },
+      //   sourceMap: true
+      // }),
       new CompressionPlugin({
           asset: '[path].gz[query]',
           algorithm: 'gzip',
