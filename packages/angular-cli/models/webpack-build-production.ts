@@ -20,12 +20,13 @@ export const getWebpackProdConfigPartial = function(projectRoot: string, appConf
                ? appConfig.styles.map((style: string) => path.resolve(appRoot, style))
                : [];
   const cssLoaders = ['css-loader?sourcemap&minimize', 'postcss-loader'];
+  let timestamp = Date.now();
   return {
     output: {
       path: path.resolve(projectRoot, appConfig.outDir),
-      filename: '[name].[chunkhash].bundle.js',
-      sourceMapFilename: '[name].[chunkhash].bundle.map',
-      chunkFilename: '[id].[chunkhash].chunk.js'
+      filename: `[name].[chunkhash]-${timestamp}.bundle.js`,
+      sourceMapFilename: `[name].[chunkhash]-${timestamp}.bundle.map`,
+      chunkFilename: `[id].[chunkhash]-${timestamp}.chunk.js`
     },
     module: {
       rules: [
