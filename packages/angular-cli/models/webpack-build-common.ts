@@ -61,19 +61,19 @@ export function getWebpackCommonConfig(
         {
           exclude: styles,
           test: /\.css$/,
-          loaders: ['raw-loader', 'postcss-loader']
+          loaders: ['css-loader', 'postcss-loader']
         }, {
           exclude: styles,
           test: /\.styl$/,
-          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader'] },
+          loaders: ['css-loader', 'postcss-loader', 'stylus-loader'] },
         {
           exclude: styles,
           test: /\.less$/,
-          loaders: ['raw-loader', 'postcss-loader', 'less-loader']
+          loaders: ['css-loader', 'postcss-loader', 'less-loader']
         }, {
           exclude: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['raw-loader', 'postcss-loader', 'sass-loader']
+          loaders: ['css-loader', 'postcss-loader', 'sass-loader']
         },
 
 
