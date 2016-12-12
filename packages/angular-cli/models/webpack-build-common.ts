@@ -126,7 +126,36 @@ export function getWebpackCommonConfig(
     },
     module: {
       rules: [
-        { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader', exclude: [nodeModules] },
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          loader: 'source-map-loader',
+          exclude: [
+            /node_modules/
+          ]
+        },
+        // in main, load css as raw text
+        {
+          exclude: styles,
+          test: /\.css$/,
+          loaders: ['css-loader', 'postcss-loader']
+        }, {
+          exclude: styles,
+          test: /\.styl$/,
+          loaders: ['css-loader', 'postcss-loader', 'stylus-loader'] },
+        {
+          exclude: styles,
+          test: /\.less$/,
+          loaders: ['css-loader', 'postcss-loader', 'less-loader']
+        }, {
+          exclude: styles,
+          test: /\.scss$|\.sass$/,
+          loaders: ['css-loader', 'postcss-loader', 'sass-loader']
+        },
+
+
+        // load global scripts using script-loader
+        { include: scripts, test: /\.js$/, loader: 'script-loader' },
 
         { test: /\.json$/, loader: 'json-loader' },
         { test: /\.(jpg|png|gif)$/, loader: 'url-loader?limit=10000' },
