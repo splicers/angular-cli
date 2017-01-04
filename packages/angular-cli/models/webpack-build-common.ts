@@ -150,7 +150,7 @@ export function getWebpackCommonConfig(
         }, {
           exclude: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['css-loader', 'postcss-loader', 'sass-loader']
+          loaders: ['to-string-loader', 'css-loader', 'postcss-loader', 'sass-loader']
         },
 
 
