@@ -31,7 +31,7 @@ export class NgCliWebpackConfig {
     sourcemap = true,
     vendorChunk = false,
     verbose = false,
-    progress = true
+    progress = true,
     publicPath?: string
   ) {
     const config: CliConfig = CliConfig.fromProject();
