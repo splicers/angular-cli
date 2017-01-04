@@ -118,7 +118,11 @@ export function getWebpackCommonConfig(
     context: projectRoot,
     entry: entryPoints,
     output: {
-      path: path.resolve(projectRoot, appConfig.outDir)
+      path: path.resolve(projectRoot, appConfig.outDir),
+      publicPath: appConfig.publicPath,
+      filename: '[name].bundle.js',
+      sourceMapFilename: '[name].bundle.map',
+      chunkFilename: '[id].chunk.js'
     },
     module: {
       rules: [

@@ -17,6 +17,8 @@ export default <any>Task.extend({
     const project = this.cliProject;
 
     const outputDir = runTaskOptions.outputPath || CliConfig.fromProject().config.apps[0].outDir;
+    const publicPath = runTaskOptions.publicPath ||
+                       CliConfig.fromProject().config.apps[0].publicPath;
     rimraf.sync(path.resolve(project.root, outputDir));
     const config = new NgCliWebpackConfig(
       project,
@@ -31,7 +33,8 @@ export default <any>Task.extend({
       runTaskOptions.sourcemap,
       runTaskOptions.vendorChunk,
       runTaskOptions.verbose,
-      runTaskOptions.progress
+      runTaskOptions.progress,
+      publicPath
     ).config;
 
     const webpackCompiler: any = webpack(config);

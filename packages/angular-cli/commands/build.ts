@@ -13,6 +13,7 @@ export interface BuildOptions {
   baseHref?: string;
   aot?: boolean;
   sourcemap?: boolean;
+  publicPath?: string;
   vendorChunk?: boolean;
   verbose?: boolean;
   progress?: boolean;
@@ -44,6 +45,7 @@ const BuildCommand = Command.extend({
     { name: 'vendor-chunk',   type: Boolean, default: true },
     { name: 'verbose',        type: Boolean, default: false },
     { name: 'progress',       type: Boolean, default: true },
+    { name: 'public-path',    type: String,  default: null, aliases: ['p'] }
     { name: 'i18n-file',      type: String, default: null },
     { name: 'i18n-format',    type: String, default: null },
     { name: 'locale',         type: String, default: null }
