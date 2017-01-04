@@ -71,7 +71,7 @@ export function makeCssLoaders(stylePaths: string[] = []) {
 
   // load component css as raw strings
   let cssLoaders: any = baseRules.map(({test, loaders}) => ({
-    exclude: stylePaths, test, loaders: ['raw-loader', ...commonLoaders, ...loaders]
+    exclude: stylePaths, test, loaders: ['to-string-loader', 'css-loader', ...commonLoaders, ...loaders]
   }));
 
   if (stylePaths.length > 0) {
