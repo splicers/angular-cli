@@ -85,7 +85,8 @@ export function getWebpackCommonConfig(
         { test: /\.html$/, loader: 'html?-minimize&interpolate&attrs=img:src video:poster source:src' },
 
         { test: /\.(otf|ttf|woff|woff2)$/, loader: 'url-loader?limit=10000' },
-        { test: /\.(eot|svg)$/, loader: 'file-loader' }
+        { test: /\.(eot|svg)$/, loader: 'file-loader' },
+        { test: /\.(mp4|webm)$/, loader: 'file' }
       ]
     },
     plugins: [
