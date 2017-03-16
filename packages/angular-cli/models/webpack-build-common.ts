@@ -84,6 +84,8 @@ export function getWebpackCommonConfig(
         { test: /\.(jpg|png|gif)$/, loader: 'url-loader?limit=10000' },
         { test: /\.html$/, loader: 'html?-minimize&interpolate&attrs=img:src video:poster source:src object:data link:href' },
 
+        { test: /\.(mp4|webm)$/, loader: 'file' },
+
         { test: /\.(otf|ttf|woff|woff2)$/, loader: 'url-loader?limit=10000' },
         { test: /\.(eot|svg)$/, loader: 'file-loader' }
       ]
